@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@rspack/plugin-node-polyfill": "^0.1.9",
-    "jmuxer": "^2.0.5",
+    "@supermap/iclient-leaflet": "^11.1.0-beta",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

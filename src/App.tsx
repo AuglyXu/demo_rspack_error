@@ -2,15 +2,22 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import JMuxer from "jmuxer";
-const jmuxer = new JMuxer({
-  debug: true,
-});
+import L from 'leaflet';
+import { tiledMapLayer } from '@supermap/iclient-leaflet';
+
 function App() {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
-    console.log(jmuxer);
-  }, []);
+    var url = "https://iserver.supermap.io/iserver/services/map-world/rest/maps/World";
+    var map = L.map('map', {
+      crs: L.CRS.EPSG4326,
+      center: [0, 0],
+      maxZoom: 18,
+      zoom: 1
+    });
+    tiledMapLayer(url).addTo(map);
+  }, [])
 
   return (
     <div className="App">

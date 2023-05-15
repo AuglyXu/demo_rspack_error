@@ -20,6 +20,9 @@ module.exports = {
         port: '5002',
     },
     builtins: {
+        define: {
+            'process.env.NODE_DEBUG': JSON.stringify(false),
+        },
         html: [
             {
                 template: './index.html'
